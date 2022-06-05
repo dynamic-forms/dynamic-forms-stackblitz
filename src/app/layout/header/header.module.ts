@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header.component';
@@ -10,6 +11,7 @@ import { HeaderComponent } from './header.component';
     RouterModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
     MatToolbarModule,
   ],
   declarations: [HeaderComponent],

@@ -1,0 +1,16 @@
+@import "@dynamic-forms/core/assets/scss/grid";
+@import "@dynamic-forms/material/assets/scss/theme";
+
+.dynamic-form-wrapper.material {
+  width: 100%;
+
+  .dynamic-form {
+    &:not(.maximized) {
+      max-width: 800px;
+
+      &.small {
+        max-width: 600px;
+      }
+    }
+  }
+}

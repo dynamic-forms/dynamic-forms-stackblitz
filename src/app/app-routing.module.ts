@@ -12,6 +12,14 @@ const appRoutes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path: 'bootstrap',
+    loadChildren: () => import('./libs/bootstrap/bootstrap.module').then(m => m.BootstrapModule),
+  },
+  {
+    path: 'material',
+    loadChildren: () => import('./libs/material/material.module').then(m => m.MaterialModule),
+  },
 ];
 
 @NgModule({
