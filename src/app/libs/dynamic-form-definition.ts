@@ -1,6 +1,8 @@
 import { DynamicFormDefinition } from '@dynamic-forms/core';
 
-export const dynamicFormDefinition: DynamicFormDefinition = {
+export const createDynamicFormDefinition: () => DynamicFormDefinition = () => JSON.parse(JSON.stringify(dynamicFormDefinition));
+
+const dynamicFormDefinition: DynamicFormDefinition = {
   template: {
     className: 'small',
   },
@@ -91,3 +93,5 @@ export const dynamicFormDefinition: DynamicFormDefinition = {
     },
   ],
 } as any;
+
+
