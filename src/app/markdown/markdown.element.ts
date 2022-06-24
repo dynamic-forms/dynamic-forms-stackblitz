@@ -1,5 +1,4 @@
-import { DynamicFormElement } from '@dynamic-forms/core';
-import { DynamicFormMarkdownDefinition, DynamicFormMarkdownTemplate } from '@dynamic-forms/markdown';
+import { DynamicFormElement, DynamicFormMarkdownDefinition, DynamicFormMarkdownTemplate } from '@dynamic-forms/core';
 
 export class MarkdownElement extends DynamicFormElement<DynamicFormMarkdownTemplate, DynamicFormMarkdownDefinition> {
   constructor(source: string) {
