@@ -1,8 +1,7 @@
 <mat-toolbar class="header" color="primary">
   <a mat-button href="/home">dynamic-forms-stackblitz</a>
   <button mat-button [matMenuTriggerFor]="examples">
-    Examples
-    <mat-icon>arrow_drop_down</mat-icon>
+    <div class="button-content">Examples<mat-icon>arrow_drop_down</mat-icon></div>
   </button>
 
   <mat-menu #examples="matMenu">
@@ -11,10 +10,10 @@
   </mat-menu>
 
   <div class="header-spacer"></div>
-  <a mat-button mat-icon-button href="https://github.com/dynamic-forms/dynamic-forms-stackblitz" target="_blank">
+  <a mat-icon-button href="https://github.com/dynamic-forms/dynamic-forms-stackblitz" target="_blank">
     <mat-icon svgIcon="github"></mat-icon>
   </a>
-  <a mat-button mat-icon-button href="https://stackblitz.com/edit/dynamic-forms-stackblitz" target="_blank">
+  <a mat-icon-button href="https://stackblitz.com/edit/dynamic-forms-stackblitz" target="_blank">
     <mat-icon svgIcon="stackblitz"></mat-icon>
   </a>
 </mat-toolbar>
