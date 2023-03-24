@@ -8,10 +8,10 @@ const dynamicFormDefinition: DynamicFormDefinition = {
   },
   children: [
     {
-      key: 'login',
+      key: 'registration',
       type: 'group',
       template: {
-        label: 'Login',
+        label: 'Registration',
         validation: {
           password: true,
         },
@@ -58,6 +58,19 @@ const dynamicFormDefinition: DynamicFormDefinition = {
               pattern: true,
             },
           },
+          suffixAddOn: {
+            type: 'icon',
+            template: {
+              type: 'button',
+              color: 'inputAction',
+              action: 'toggleTextboxAsTextType',
+            },
+            expressions: {
+              icon: 'data.parent.input.inputTypeForced ? "visibility" : "visibility_off"',
+              label: 'data.parent.input.inputTypeForced ? "Hide password" : "Show password"',
+              disabled: 'data.parent.disabled',
+            },
+          },
         },
         {
           key: 'confirmPassword',
@@ -74,6 +87,9 @@ const dynamicFormDefinition: DynamicFormDefinition = {
               required: true,
               pattern: true,
             },
+          },
+          suffixAddOn: {
+            reference: 'passwordSuffixAddOn',
           },
         },
       ],
@@ -92,6 +108,21 @@ const dynamicFormDefinition: DynamicFormDefinition = {
       },
     },
   ],
+  references: {
+    passwordSuffixAddOn: {
+      type: 'icon',
+      template: {
+        type: 'button',
+        color: 'inputAction',
+        action: 'toggleTextboxAsTextType',
+      },
+      expressions: {
+        icon: 'data.parent.input.inputTypeForced ? "visibility" : "visibility_off"',
+        label: 'data.parent.input.inputTypeForced ? "Hide password" : "Show password"',
+        disabled: 'data.parent.disabled',
+      },
+    },
+  },
 } as any;
 
 
