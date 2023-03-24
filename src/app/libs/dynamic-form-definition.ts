@@ -59,17 +59,7 @@ const dynamicFormDefinition: DynamicFormDefinition = {
             },
           },
           suffixAddOn: {
-            type: 'icon',
-            template: {
-              type: 'button',
-              color: 'inputAction',
-              action: 'toggleTextboxAsTextType',
-            },
-            expressions: {
-              icon: 'data.parent.input.inputTypeForced ? "visibility" : "visibility_off"',
-              label: 'data.parent.input.inputTypeForced ? "Hide password" : "Show password"',
-              disabled: 'data.parent.disabled',
-            },
+            reference: 'passwordSuffixAddOn',
           },
         },
         {
