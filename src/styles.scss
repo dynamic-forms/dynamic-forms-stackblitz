@@ -1,5 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$app-primary: mat.define-palette(mat.$indigo-palette);
+$app-accent:  mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$app-typography: mat.define-typography-config(
+  $subtitle-1: mat.define-typography-level(20px, 24px, 500),
+  $body-1: mat.define-typography-level(14px, 24px, 400),
+  $body-2: mat.define-typography-level(14px, 20px, 400),
+  $button: mat.define-typography-level(14px, 36px, 500),
+);
+
+$app-theme: mat.define-light-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent
+  ),
+  typography: $app-typography
+));
+
+@include mat.all-component-themes($app-theme);
+@include mat.typography-hierarchy($app-typography);
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  .button-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .router-link-active {
+    background: rgba(63,81,181,.15);
+    color: #3f51b5;
+  }
+}
+
 @import "@dynamic-forms/core/assets/scss/grid";
 @import "@dynamic-forms/bootstrap/assets/scss/theme";
 @import "@dynamic-forms/material/assets/scss/theme";
@@ -16,46 +59,5 @@
         max-width: 600px;
       }
     }
-  }
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-  .button-content {
-    display: flex;
-    align-items: center;
-  }
-
-  .router-link-active {
-    background: rgba(63,81,181,.15);
-    color: #3f51b5;
   }
 }
