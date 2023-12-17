@@ -5,12 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { appInitializer, AppService } from './app.service';
-import { LayoutModule } from './layout/layout.module';
 import { IconService } from './services/icon.service';
+import { ContentComponent } from './layout/content/content.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, LayoutModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, ContentComponent, HeaderComponent, AppRoutingModule],
   providers: [
     AppService,
     IconService,
