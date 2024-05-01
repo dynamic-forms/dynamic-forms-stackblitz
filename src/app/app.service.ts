@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IconService } from './services/icon.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AppService {
   constructor(protected iconService: IconService) {}
 
