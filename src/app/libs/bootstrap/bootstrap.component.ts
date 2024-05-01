@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { DynamicFormDefinition } from '@dynamic-forms/core';
+import { DynamicFormComponent, DynamicFormDefinition } from '@dynamic-forms/core';
 import { createDynamicFormDefinition } from './../dynamic-form-definition';
+import { BootstrapModule } from './bootstrap.module';
 
 @Component({
+  standalone: true,
   selector: 'app-bootstrap',
   templateUrl: './bootstrap.component.html',
   styleUrls: ['./bootstrap.component.scss'],
+  imports: [DynamicFormComponent, BootstrapModule],
 })
 export class BootstrapComponent {
   readonly definition: DynamicFormDefinition;

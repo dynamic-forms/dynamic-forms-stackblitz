@@ -36,7 +36,6 @@
               }
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
@@ -83,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dynamic-forms-stackblitz:build:production"
+              "buildTarget": "dynamic-forms-stackblitz:build:production"
             },
             "development": {
-              "browserTarget": "dynamic-forms-stackblitz:build:development"
+              "buildTarget": "dynamic-forms-stackblitz:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dynamic-forms-stackblitz:build"
+            "buildTarget": "dynamic-forms-stackblitz:build"
           }
         },
         "test": {
@@ -110,7 +109,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
