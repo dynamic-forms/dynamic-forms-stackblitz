@@ -1,12 +1,11 @@
-import { APP_INITIALIZER, enableProdMode, importProvidersFrom } from '@angular/core';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, enableProdMode } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { AppService, appInitializer } from './app/app.service';
-import { IconService } from './app/services/icon.service';
 import { appRoutes } from './app/app.routes.';
 
 if (environment.production) {
@@ -15,10 +14,9 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(BrowserModule, BrowserAnimationsModule, HttpClientModule),
+    provideAnimations(),
+    provideHttpClient(),
     provideRouter(appRoutes),
-    AppService,
-    IconService,
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializer,

@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { DynamicFormComponent, DynamicFormDefinition } from '@dynamic-forms/core';
+import { DynamicFormComponent, DynamicFormDefinition, withDynamicFormColors } from '@dynamic-forms/core';
+import { provideMatDynamicFormsWithDefaultFeatures } from '@dynamic-forms/material';
 import { createDynamicFormDefinition } from '../dynamic-form-definition';
-import { MaterialModule } from './material.module';
+
+const colors = {
+  colors: {
+    inputAction: 'none',
+  },
+  libraryName: 'material',
+};
+
+const features = [
+  withDynamicFormColors(colors),
+];
 
 @Component({
   standalone: true,
   selector: 'app-material',
   templateUrl: './material.component.html',
   styleUrls: ['./material.component.scss'],
-  imports: [DynamicFormComponent, MaterialModule],
+  imports: [DynamicFormComponent],
+  providers: provideMatDynamicFormsWithDefaultFeatures({ theme: 'material' }, ...features),
 })
 export class MaterialComponent {
   readonly definition: DynamicFormDefinition;
