@@ -21,7 +21,8 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/dynamic-forms-stackblitz"
+              "base": "dist/dynamic-forms-stackblitz",
+              "browser": ""
             },
             "index": "src/index.html",
             "polyfills": [
@@ -130,6 +131,7 @@
   },
   "cli": {
     "analytics": "09b8af2b-da33-444b-9a70-847022c63242",
+    "packageManager": "yarn",
     "schematicCollections": [
       "@angular-eslint/schematics"
     ]
