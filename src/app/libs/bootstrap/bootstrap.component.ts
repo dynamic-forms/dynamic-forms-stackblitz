@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { DynamicFormComponent, DynamicFormDefinition } from '@dynamic-forms/core';
+import { DynamicFormComponent, DynamicFormDefinition, withDynamicFormColors } from '@dynamic-forms/core';
+import { provideBsDynamicFormsWithDefaultFeatures } from '@dynamic-forms/bootstrap';
 import { createDynamicFormDefinition } from './../dynamic-form-definition';
-import { BootstrapModule } from './bootstrap.module';
+
+const colors = {
+  colors: {
+    inputAction: 'secondary',
+  },
+  libraryName: 'bootstrap',
+};
+
+const features = [
+  withDynamicFormColors(colors),
+];
 
 @Component({
   standalone: true,
   selector: 'app-bootstrap',
   templateUrl: './bootstrap.component.html',
   styleUrls: ['./bootstrap.component.scss'],
-  imports: [DynamicFormComponent, BootstrapModule],
+  imports: [DynamicFormComponent],
+  providers: provideBsDynamicFormsWithDefaultFeatures({ theme: 'bootstrap' }, ...features),
 })
 export class BootstrapComponent {
   readonly definition: DynamicFormDefinition;
