@@ -20,7 +20,7 @@ const dynamicFormDefinition: DynamicFormDefinition = {
         password: {
           type: 'equal',
           parameters: {
-            keys: [ 'password', 'confirmPassword' ],
+            keys: ['password', 'confirmPassword'],
           },
           message: 'Confirm password needs to equal password',
         },
@@ -94,7 +94,7 @@ const dynamicFormDefinition: DynamicFormDefinition = {
         label: 'Submit',
       },
       expressions: {
-        disabled: 'data.root.status !== \'VALID\'',
+        disabled: "data.root.status !== 'VALID'",
       },
     },
   ],
@@ -114,5 +114,3 @@ const dynamicFormDefinition: DynamicFormDefinition = {
     },
   },
 } as any;
-
-

@@ -10,15 +10,13 @@ const colors = {
   libraryName: 'material',
 };
 
-const features = [
-  withDynamicFormColors(colors),
-];
+const features = [withDynamicFormColors(colors)];
 
 @Component({
   standalone: true,
   selector: 'app-material',
   templateUrl: './material.component.html',
-  styleUrls: ['./material.component.scss'],
+  styleUrl: './material.component.scss',
   imports: [DynamicFormComponent],
   providers: provideMatDynamicFormsWithDefaultFeatures({ theme: 'material' }, ...features),
 })
