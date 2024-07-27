@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DynamicFormComponent, DynamicFormDefinition, withDynamicFormColors } from '@dynamic-forms/core';
 import { provideBsDynamicFormsWithDefaultFeatures } from '@dynamic-forms/bootstrap';
+import { DynamicFormComponent, DynamicFormDefinition, withDynamicFormColors } from '@dynamic-forms/core';
 import { createDynamicFormDefinition } from './../dynamic-form-definition';
 
 const colors = {
@@ -10,15 +10,13 @@ const colors = {
   libraryName: 'bootstrap',
 };
 
-const features = [
-  withDynamicFormColors(colors),
-];
+const features = [withDynamicFormColors(colors)];
 
 @Component({
   standalone: true,
   selector: 'app-bootstrap',
   templateUrl: './bootstrap.component.html',
-  styleUrls: ['./bootstrap.component.scss'],
+  styleUrl: './bootstrap.component.scss',
   imports: [DynamicFormComponent],
   providers: provideBsDynamicFormsWithDefaultFeatures({ theme: 'bootstrap' }, ...features),
 })

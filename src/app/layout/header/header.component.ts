@@ -9,7 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrl: './header.component.scss',
   imports: [MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, RouterLink, RouterLinkActive],
 })
 export class HeaderComponent {}
