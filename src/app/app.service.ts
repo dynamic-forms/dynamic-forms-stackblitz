@@ -10,4 +10,7 @@ export class AppService {
   }
 }
 
-export const appInitializer = (appService: AppService): () => void => () => appService.init();
+export const appInitializer =
+  (appService: AppService): (() => void) =>
+  () =>
+    appService.init();
