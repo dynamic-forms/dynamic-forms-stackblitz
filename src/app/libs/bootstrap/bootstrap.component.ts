@@ -13,7 +13,6 @@ const colors = {
 const features = [withDynamicFormColors(colors)];
 
 @Component({
-  standalone: true,
   selector: 'app-bootstrap',
   templateUrl: './bootstrap.component.html',
   styleUrl: './bootstrap.component.scss',

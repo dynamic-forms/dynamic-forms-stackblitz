@@ -27,6 +27,7 @@
       },
       "rules": {
         "@angular-eslint/use-injectable-provided-in": "off",
+        "@angular-eslint/prefer-standalone": "error",
         "@angular-eslint/prefer-on-push-component-change-detection": "off",
         "@typescript-eslint/consistent-type-definitions": "error",
         "@typescript-eslint/dot-notation": "off",
@@ -143,6 +144,8 @@
         "@angular-eslint/template/cyclomatic-complexity": "off",
         "@angular-eslint/template/i18n": "off",
         "@angular-eslint/template/interactive-supports-focus": "off",
+        "@angular-eslint/template/prefer-control-flow": "error",
+        "@angular-eslint/template/no-call-expression": "off",
         "prettier/prettier": [
           "error",
           {

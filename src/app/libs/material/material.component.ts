@@ -13,7 +13,6 @@ const colors = {
 const features = [withDynamicFormColors(colors)];
 
 @Component({
-  standalone: true,
   selector: 'app-material',
   templateUrl: './material.component.html',
   styleUrl: './material.component.scss',
