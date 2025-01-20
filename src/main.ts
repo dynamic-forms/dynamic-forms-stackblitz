@@ -1,11 +1,11 @@
 import { provideHttpClient } from '@angular/common/http';
-import { APP_INITIALIZER, enableProdMode } from '@angular/core';
+import { enableProdMode, inject, provideAppInitializer } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes.';
-import { AppService, appInitializer } from './app/app.service';
+import { AppService } from './app/app.service';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -13,15 +13,5 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    provideAnimations(),
-    provideHttpClient(),
-    provideRouter(appRoutes),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializer,
-      deps: [AppService],
-      multi: true,
-    },
-  ],
+  providers: [provideAnimations(), provideHttpClient(), provideRouter(appRoutes), provideAppInitializer(() => inject(AppService).init())],
 }).catch(err => console.error(err));
