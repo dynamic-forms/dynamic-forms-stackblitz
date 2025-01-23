@@ -66,6 +66,9 @@ body {
   margin: 0;
 
   @include mat.all-component-themes($app-light-theme);
+  @include mat.card-overrides((
+    elevated-container-color: #fff,
+  ));
 
   --app-primary-color: #{mat.get-theme-color($app-light-theme, primary)};
   --app-primary-background: #{mat.get-theme-color($app-light-theme, primary-container)};
