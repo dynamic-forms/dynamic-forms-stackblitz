@@ -14,4 +14,5 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [provideAnimations(), provideHttpClient(), provideRouter(appRoutes), provideAppInitializer(() => inject(AppService).init())],
+  // eslint-disable-next-line no-console
 }).catch(err => console.error(err));

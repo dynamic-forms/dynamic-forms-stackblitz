@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class IconService {
-  private readonly _svgs: { [svg: string]: string } = {
+  private readonly _svgs: Record<string, string> = {
     github: 'assets/images/github.svg',
     stackblitz: 'assets/images/stackblitz.svg',
   };

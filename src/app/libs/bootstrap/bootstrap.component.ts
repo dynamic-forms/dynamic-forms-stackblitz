@@ -33,6 +33,7 @@ export class BootstrapComponent {
   }
 
   submitForm(data: any): void {
+    // eslint-disable-next-line no-console
     console.log(data);
   }
 }

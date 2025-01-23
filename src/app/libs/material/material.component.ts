@@ -29,6 +29,7 @@ export class MaterialComponent {
   }
 
   submitForm(data: any): void {
+    // eslint-disable-next-line no-console
     console.log(data);
   }
 }
