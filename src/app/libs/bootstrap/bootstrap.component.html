@@ -1,1 +1,1 @@
-<dynamic-form [definition]="definition" [model]="model" (formSubmit)="submitForm($event)" />
+<dynamic-form [definition]="definition" [model]="model" [attr.data-bs-theme]="theme$ | async" (formSubmit)="submitForm($event)" />

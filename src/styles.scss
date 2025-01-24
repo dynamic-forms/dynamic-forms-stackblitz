@@ -1,21 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use "@angular/material" as mat;
-
-@include mat.core();
+@use "@dynamic-forms/core/assets/scss/grid";
+@use "@dynamic-forms/bootstrap/assets/scss/theme" as bootstrapTheme;
+@use "@dynamic-forms/material/assets/scss/theme" as materialTheme;
+@use "@dynamic-forms/markdown/assets/scss/markdown";
 
 :root {
-  --sys-display-large: 500 24px/32px Roboto, sans-serif;
-  --sys-display-large-tracking: normal;
+  --mat-sys-display-large: 500 24px/32px Roboto, sans-serif;
+  --mat-sys-display-large-tracking: normal;
 
-  --sys-display-medium: 500 20px/28px Roboto, sans-serif;
-  --sys-display-medium-tracking: normal;
+  --mat-sys-display-medium: 500 20px/28px Roboto, sans-serif;
+  --mat-sys-display-medium-tracking: normal;
 
-  --sys-display-small: 500 20px/24px Roboto, sans-serif;
-  --sys-display-small-tracking: normal;
+  --mat-sys-display-small: 500 20px/24px Roboto, sans-serif;
+  --mat-sys-display-small-tracking: normal;
 
-  --sys-body-large: 400 14px/20px Roboto, sans-serif;
-  --sys-body-large-tracking: normal;
+  --mat-sys-body-large: 400 14px/20px Roboto, sans-serif;
+  --mat-sys-body-large-tracking: normal;
+
+  --mat-sys-body-medium-size: 14px;
+  --mat-sys-body-medium-line-height: normal;
+  --mat-sys-body-medium-tracking: normal;
+
+  --mat-sys-body-small-size: 12px;
+  --mat-sys-body-small-line-height: 20px;
+  --mat-sys-body-small-tracking: .0333333em;
 }
 
 $app-light-theme: mat.define-theme((
@@ -56,6 +66,9 @@ body {
   margin: 0;
 
   @include mat.all-component-themes($app-light-theme);
+  @include mat.card-overrides((
+    elevated-container-color: #fff,
+  ));
 
   --app-primary-color: #{mat.get-theme-color($app-light-theme, primary)};
   --app-primary-background: #{mat.get-theme-color($app-light-theme, primary-container)};
@@ -108,11 +121,6 @@ body {
     }
   }
 }
-
-@import "@dynamic-forms/core/assets/scss/grid";
-@import "@dynamic-forms/bootstrap/assets/scss/theme";
-@import "@dynamic-forms/material/assets/scss/theme";
-@import "@dynamic-forms/markdown/assets/scss/markdown";
 
 .dynamic-form-wrapper {
   width: 100%;

@@ -13,7 +13,6 @@ const colors = {
 const features = [withDynamicFormColors(colors)];
 
 @Component({
-  standalone: true,
   selector: 'app-material',
   templateUrl: './material.component.html',
   styleUrl: './material.component.scss',
@@ -30,6 +29,7 @@ export class MaterialComponent {
   }
 
   submitForm(data: any): void {
+    // eslint-disable-next-line no-console
     console.log(data);
   }
 }
