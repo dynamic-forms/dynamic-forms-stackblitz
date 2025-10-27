@@ -4,8 +4,8 @@ import { HeaderComponent } from './layout/header/header.component';
 
 @Component({
   selector: 'app-root',
+  imports: [HeaderComponent, ContentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [HeaderComponent, ContentComponent],
 })
 export class AppComponent {}

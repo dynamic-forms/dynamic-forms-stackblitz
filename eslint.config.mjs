@@ -1,12 +1,11 @@
-// @ts-nocheck
-const eslint = require("@eslint/js");
-const tseslint = require("typescript-eslint");
-const angular = require("angular-eslint");
-const eslintPluginImport = require('eslint-plugin-import');
-const eslintPluginUnusedImports = require("eslint-plugin-unused-imports");
-const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+import angular from "angular-eslint";
+import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
-module.exports = tseslint.config(
+export default tseslint.config(
   {
     ignores: ["apps/demo/src/assets/"]
   },
@@ -17,8 +16,8 @@ module.exports = tseslint.config(
     },
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.stylistic,
+      ...tseslint.configs.recommendedTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsAll,
       // @ts-ignore
       eslintPluginImport.flatConfigs.recommended,
@@ -26,6 +25,11 @@ module.exports = tseslint.config(
       eslintPluginPrettierRecommended
     ],
     processor: angular.processInlineTemplates,
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
     settings: {
       "import/resolver": {
         "typescript": {
@@ -35,6 +39,7 @@ module.exports = tseslint.config(
     },
     rules: {
       "@angular-eslint/use-injectable-provided-in": "off",
+      "@angular-eslint/prefer-inject": "off",
       "@angular-eslint/prefer-on-push-component-change-detection": "off",
       "@angular-eslint/prefer-signals": "off",
       "@angular-eslint/prefer-standalone": "error",
@@ -89,12 +94,18 @@ module.exports = tseslint.config(
       "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-inferrable-types": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         {
           "argsIgnorePattern": "^_"
         }
       ],
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
       "arrow-body-style": [
         "error",
         "as-needed",
