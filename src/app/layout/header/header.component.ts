@@ -10,9 +10,9 @@ import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-header',
+  imports: [AsyncPipe, MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  imports: [AsyncPipe, MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, RouterLink, RouterLinkActive],
 })
 export class HeaderComponent {
   readonly theme$ = this.themeService.isDarkMode$.pipe(map(isDarkMode => (isDarkMode ? 'dark_mode' : 'light_mode')));

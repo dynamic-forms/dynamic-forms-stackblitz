@@ -17,9 +17,9 @@ const features = [withDynamicFormColors(colors)];
 
 @Component({
   selector: 'app-bootstrap',
+  imports: [DynamicFormComponent, AsyncPipe],
   templateUrl: './bootstrap.component.html',
   styleUrl: './bootstrap.component.scss',
-  imports: [DynamicFormComponent, AsyncPipe],
   providers: provideBsDynamicFormsWithDefaultFeatures({ theme: 'bootstrap' }, ...features),
 })
 export class BootstrapComponent {

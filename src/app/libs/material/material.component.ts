@@ -14,9 +14,9 @@ const features = [withDynamicFormColors(colors)];
 
 @Component({
   selector: 'app-material',
+  imports: [DynamicFormComponent],
   templateUrl: './material.component.html',
   styleUrl: './material.component.scss',
-  imports: [DynamicFormComponent],
   providers: provideMatDynamicFormsWithDefaultFeatures({ theme: 'material' }, ...features),
 })
 export class MaterialComponent {
