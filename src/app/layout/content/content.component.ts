@@ -5,8 +5,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-content',
+  imports: [MatCardModule, MatSidenavModule, RouterOutlet],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',
-  imports: [MatCardModule, MatSidenavModule, RouterOutlet],
 })
 export class ContentComponent {}
